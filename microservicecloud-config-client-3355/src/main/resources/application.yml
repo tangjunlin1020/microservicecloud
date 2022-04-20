@@ -1,0 +1,3 @@
+#spring:
+#  application:
+#    name: microservicecloud-config-client #这个可以不用写，要写的话也要和远程的配置最好一样

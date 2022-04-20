@@ -1,0 +1,30 @@
+server: 
+  port: 9527
+ 
+spring: 
+  application:
+    name: microservicecloud-zuul-gateway
+ 
+eureka: 
+  client: 
+    service-url: 
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka  
+  instance:
+    instance-id: gateway-9527.com
+    prefer-ip-address: true 
+ 
+ 
+zuul: 
+  prefix: /tangjunlin   #设置统一的公共前缀，不设置就没有。
+  #ignored-services: microservicecloud-dept #原真实服务名忽略，单个具体，多个可以使用“*” 例如ignored-services: "*"
+  ignored-services: "*"
+  routes: 
+    mydept.serviceId: microservicecloud-dept
+    mydept.path: /mydept/**
+ 
+info:
+  app.name: tangjunlin-microcloud
+  company.name: www.tangjunlin.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+

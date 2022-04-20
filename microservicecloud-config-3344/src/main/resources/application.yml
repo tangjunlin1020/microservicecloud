@@ -1,0 +1,16 @@
+server: 
+  port: 3344 
+  
+spring:
+  application:
+    name:  microservicecloud-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:tangjunlin1020/microservicecloud-config.git #GitHub上面的git仓库名字
+          default-label: main  #加入这个配置就可以正常请求到git上的配置文件了。默认是master，现在新的GitHub都是main
+#          username: 15256255437 #用户密码当使用的https方式的话就需要
+#          password: fuwei0528
+          ###搜索的目录
+#          search-paths: testConfig      #/** ：指定搜索根路径下的所有目录，若有多个路径使用逗号隔开
